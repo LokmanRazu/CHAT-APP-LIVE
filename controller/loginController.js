@@ -33,7 +33,7 @@ function getLogin(req, res, next) {
           const token = jwt.sign(userObject,process.env.JWT_SECRET,{
             expiresIn:process.env.JWT_EXPIRY,
         })
-        // sET COOKIE
+        // SET COOKIE
         res.cookie(process.env.COOKIE_NAME,token,{
           maxAge:process.env.JWT_EXPIRY,
           httpOnly:true,
@@ -64,9 +64,16 @@ function getLogin(req, res, next) {
         }
       })
     }
-  }
+  };
+
+// Logout
+function logout(req,res,next){
+  res.clearCookie(process.env.COOKIE_NAME);
+  res.send('logout')
+}
   
   module.exports = {
     getLogin,
-    login
+    login,
+    logout
   };
