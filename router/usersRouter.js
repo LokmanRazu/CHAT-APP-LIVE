@@ -23,11 +23,7 @@ router.get("/", decorateHtmlResponse("Users"),checkLogin ,getUsers);
 
 // add user
 router.post(
-  "/",
-  avatarUpload,
-  addUserValidators,
-  addUserValidationHandler,
-  addUser
+  "/",checkLogin, avatarUpload,addUserValidators,addUserValidationHandler,addUser
 );
 
 // remove user
