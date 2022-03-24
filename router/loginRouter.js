@@ -10,7 +10,7 @@ const {redirectLoggedIn} = require('../middlewares/common/checkLogin')
 const router = express.Router();
 
 // Set Page title
-const page_title = 'Login'
+const page_title = 'Login';
 
 // login page
 router.get("/", decorateHtmlResponse('page_title'),redirectLoggedIn, getLogin);
