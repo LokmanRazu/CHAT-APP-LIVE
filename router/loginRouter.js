@@ -16,7 +16,7 @@ const page_title = 'Login'
 router.get("/", decorateHtmlResponse('page_title'),redirectLoggedIn, getLogin);
 
 // Login user
-router.post('/', decorateHtmlResponse('page_title'),doLoginValidators, doLoginValidationHandler, login)
+router.post('/', decorateHtmlResponse('page_title'),doLoginValidators, doLoginValidationHandler, login);
 
 // Logout
 router.delete('/',logout);
